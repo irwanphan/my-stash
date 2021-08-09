@@ -1,10 +1,5 @@
-import { Route } from "react-router-dom";
-
-import AllTrades from "./pages/AllTrades";
-import Favorites from "./pages/Favorites";
-import NewTrade from "./pages/NewTrade";
-
 import Item from "./components/Item";
+import Routes from "./routes";
 
 function App() {
   return <div>
@@ -12,8 +7,8 @@ function App() {
     {/* <Item title="the asdf" />
     <Item title="qwerty"/>
     <Item title="whutever"/> */}
-
-    <Route path=""></Route>
+    
+    <Routes />
   </div>;
 }
 
