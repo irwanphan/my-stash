@@ -1,9 +1,13 @@
-function Item() {
+function Item(props) {
+	const deleteHandler = () => {
+		console.log(props.title + " released!")
+	}
+
 	return (
 		<div className='card'>
-			<h3>item name</h3>
+			<h3>{props.title}</h3>
 			<div className="action">
-				<button>release</button>
+				<button onClick={deleteHandler}>release</button>
 			</div>
 		</div>
 	);
