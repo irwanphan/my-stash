@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Modal from "./Modal";
-import Backdrop from "./Backdrop";
 
 function Item(props) {
 	// initial state is false, because modal should not be open
@@ -12,6 +11,9 @@ function Item(props) {
 	const deleteHandler = () => {
 		setModalIsOpen(true);
 	}
+	const closeModalHandler = () => {
+		setModalIsOpen(false);
+	}
 
 	return (
 		<div className='card'>
@@ -19,9 +21,8 @@ function Item(props) {
 			<div className="action">
 				<button onClick={deleteHandler}>release</button>
 			</div>
-			{/* modalIsOpen && <Modal /> */}
-			{ modalIsOpen ? <Modal /> : null }
-			{ modalIsOpen ? <Backdrop /> : null }
+			{/* { modalIsOpen ? <Modal /> : null } */}
+			{ modalIsOpen && <Modal onCancel={closeModalHandler} /> }
 		</div>
 	);
 }
