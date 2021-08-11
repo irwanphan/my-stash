@@ -1,7 +1,8 @@
+import Card from "../ui/Card";
+
 function ItemDetail(props) {
     return (
-        <article className="card" key={props.key}>
-            {console.log(props.key)}
+        <Card key={props.key}>
             <div>
                 <img src={props.image} alt={props.title} />
             </div>
@@ -13,7 +14,7 @@ function ItemDetail(props) {
             <div>
                 <button>add to favorites</button>
             </div>
-        </article>
+        </Card>
     );
 }
 

@@ -1,17 +1,13 @@
-// import Item from "./components/Item";
+import Layout from "./components/layout/Layout";
 import Routes from "./routes";
-import MainNavigation from "./components/layout/MainNavigation";
 
 function App() {
-  return <div>
-    <MainNavigation />
-    <h1>my stuff</h1>
-    {/* <Item title="the asdf" />
-    <Item title="qwerty"/>
-    <Item title="whutever"/> */}
+  return (
+    <Layout>    
     
-    <Routes />
-  </div>;
+      <Routes />
+    </Layout>
+  );
 }
 
 export default App;
