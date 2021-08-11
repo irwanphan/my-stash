@@ -1,3 +1,5 @@
+import ItemList from "../components/items/ItemList"
+
 const DUMMY_DATA = [
     {
         id: 1,
@@ -16,10 +18,9 @@ const DUMMY_DATA = [
 ]
 
 function AllItems() {
-    return <section>
-        <li>{DUMMY_DATA[0].title}</li>
-        <li>{DUMMY_DATA[1].title}</li>
-    </section>
+    return <div>
+        <ItemList data={DUMMY_DATA} />
+    </div>
 }
 
 export default AllItems;
