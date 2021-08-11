@@ -1,0 +1,63 @@
+// global variables
+$dark: #333666
+$holy: #fefefe
+$black: #121212
+$white: #ffffff
+
+$root-padding: 1rem
+$inner-padding: 0.5rem
+$modal-padding: 2rem
+$card-margin: 0.5rem
+
+$font-family: "Century Gothic", Verdana, Oxygen, Segoe UI, Calibri
+
+// style mixin
+=absoluteZero
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+=createBorder($width: 1px 1px 2px 1px, $color: $dark, $style: solid)
+    border-width: $width
+    border-style: $style
+    border-color: $color
+=itemCard
+    +createBorder($width: 1px 2px 3px 1px)
+    padding: $inner-padding
+    margin-bottom: $card-margin
+    img
+        max-width: 100%
+=actionButton($margin: 0 0 0 0)
+    +createBorder
+    padding: $inner-padding
+    background-color: $holy
+    cursor: pointer
+    margin: $margin
+=createModal($text-align: center, $modal-padding: $modal-padding)
+    // vertical centering
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    position: fixed
+    +absoluteZero
+    text-align: $text-align
+    padding: $root-padding
+    min-height: 100vh
+    height: 100vh
+    z-index: 888
+    .modal
+        +createBorder($width: 1px 2px 3px 1px)
+        background-color: $white
+        padding: $modal-padding
+        z-index: 889
+=createBackdrop($background-color: rgba(0,0,0,0.28))
+    +absoluteZero
+    position: fixed
+    background-color: $background-color
+
+=createInlineMenu
+    li, ul li, nav ul li
+        display: inline-block
+    nav ul, ul
+        padding: 0
