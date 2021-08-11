@@ -1,5 +1,13 @@
+@import "../../base"
+
 header
+    +createInlineMenu
     nav
         ul
             li
-                display: inline-block
+                +createBorder
+                margin: .125rem
+                a
+                    display: block
+                    padding: .125rem .5rem
+                    font-size: .8rem
