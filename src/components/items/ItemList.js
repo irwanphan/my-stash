@@ -1,12 +1,20 @@
+import ItemDetail from "./ItemDetail";
+
 function ItemList(props) {
-    return <section>
-        {props.data.map((item) => {
-            return <div className="card" key={item.id}>
-                <div>{item.title}</div>
-                <small>{item.initial_value}</small>
-            </div>
-        })}
-    </section>
+    return (
+        <div>
+            {props.data.map((item) => (
+                <ItemDetail 
+                    key={item.id} 
+                    id={item.id}
+                    title={item.title}
+                    image={item.image}
+                    description={item.description}
+                    initial_value={item.initial_value}
+                />
+            ))}
+        </div>
+    );
 }
 
 export default ItemList;

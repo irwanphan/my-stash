@@ -1,17 +1,20 @@
-function ItemDetail() {
-    return <article>
-        <div>
-            <img src="" alt="" />
-        </div>
-        <div>
-            <h3>title</h3>
-            <small>initial_value</small>
-            <p>description</p>
-        </div>
-        <div>
-            <button>add to favorites</button>
-        </div>
-    </article>
+function ItemDetail(props) {
+    return (
+        <article className="card" key={props.key}>
+            {console.log(props.key)}
+            <div>
+                <img src={props.image} alt={props.title} />
+            </div>
+            <div>
+                <h3>{props.title}</h3>
+                <small>{props.initial_value}</small>
+                <p>{props.description}</p>
+            </div>
+            <div>
+                <button>add to favorites</button>
+            </div>
+        </article>
+    );
 }
 
 export default ItemDetail;
