@@ -1,5 +1,9 @@
+import NewItemForm from "../components/items/NewItemForm";
+
 function NewItem() {
-    return <div>new item</div>
+    return <div>
+        <NewItemForm></NewItemForm>
+    </div>
 }
 
 export default NewItem;

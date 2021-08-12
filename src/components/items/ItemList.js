@@ -1,4 +1,4 @@
-import ItemCard from "./ItemDetail";
+import ItemCard from "./ItemCard";
 
 function ItemList(props) {
     return (
