@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom"
+
 import ItemList from "../components/items/ItemList"
+import FAB from "../components/ui/FAB"
 
 const DUMMY_DATA = [
     {
@@ -20,6 +23,9 @@ const DUMMY_DATA = [
 function AllItems() {
     return <div>
         <ItemList data={DUMMY_DATA} />
+        <Link to="/new-item">
+            <FAB>&#10133;</FAB>
+        </Link>
     </div>
 }
 

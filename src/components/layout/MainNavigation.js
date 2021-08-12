@@ -11,7 +11,7 @@ function MainNavigation() {
                     <Link to="/">Stash</Link>
                 </li>
                 <li>
-                    <Link to="/AllTrades">Trades</Link>
+                    <Link to="/all-trades">Trades</Link>
                 </li>
                 <li>
                     <Link to="/favorites">Favorites</Link>

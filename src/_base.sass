@@ -11,7 +11,19 @@ $card-margin: 0.5rem
 
 $font-family: "Century Gothic", Verdana, Oxygen, Segoe UI, Calibri
 
+// supported browsers
+$browsers: '', '-moz-', '-webkit-', '-ms-'
+
 // style mixin
+=transition($sec, $type: all, $accel: ease)
+	@each $browser in $browsers
+		#{$browser}transition: $type $sec $accel
+=borderRadius($radius: 50%)
+	@each $browser in $browsers
+		#{$browser}border-radius: $radius
+=boxSizing($type: border-box)
+	@each $browser in $browsers
+		#{$browser}box-sizing: $type
 =absoluteZero
     top: 0
     left: 0
@@ -33,6 +45,15 @@ $font-family: "Century Gothic", Verdana, Oxygen, Segoe UI, Calibri
     background-color: $holy
     cursor: pointer
     margin: $margin
+=floatingActionButton($border-radius: 50% default, $top: null, $right: null, $bottom: null, $left: null)
+    position: fixed
+    top: $top
+    right: $right
+    bottom: $bottom
+    left: $left
+    +actionButton
+    +borderRadius
+        
 =createModal($text-align: center, $modal-padding: $modal-padding)
     // vertical centering
     display: flex

@@ -1,10 +1,10 @@
-import ItemDetail from "./ItemDetail";
+import ItemCard from "./ItemDetail";
 
 function ItemList(props) {
     return (
         <div>
             {props.data.map((item) => (
-                <ItemDetail 
+                <ItemCard 
                     key={item.id} 
                     id={item.id}
                     title={item.title}

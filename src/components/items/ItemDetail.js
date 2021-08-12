@@ -1,6 +1,6 @@
 import Card from "../ui/Card";
 
-function ItemDetail(props) {
+function ItemCard(props) {
     return (
         <Card key={props.key}>
             <div>
@@ -18,4 +18,4 @@ function ItemDetail(props) {
     );
 }
 
-export default ItemDetail;
+export default ItemCard;
