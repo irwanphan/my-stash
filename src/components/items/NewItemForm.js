@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Card from "../ui/Card";
 import classes from "./NewItemForm.module.sass"
 
-function NewItemForm() {
+function NewItemForm(props) {
     const titleInputRef = useRef();
     const imageInputRef = useRef();
     const descriptionInputRef = useRef();
@@ -25,12 +25,12 @@ function NewItemForm() {
             initial_value: enteredInitialValue,
         }
 
-        console.log(itemData)
+        // console.log(itemData)
+        props.onAddNewItem(itemData)
     }
 
     return <Card>
         <div>
-            <h3>add new item</h3>
             <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.inputBlock}>
                     <label htmlFor="title">item title</label>
