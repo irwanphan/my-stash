@@ -9,7 +9,10 @@ $inner-padding: 0.5rem
 $modal-padding: 2rem
 $card-margin: 0.5rem
 
+$card-max-width: 40rem
+
 $font-family: "Century Gothic", Verdana, Oxygen, Segoe UI, Calibri
+$input-font-size: 1rem
 
 // supported browsers
 $browsers: '', '-moz-', '-webkit-', '-ms-'
@@ -82,3 +85,21 @@ $browsers: '', '-moz-', '-webkit-', '-ms-'
         display: inline-block
     nav ul, ul
         padding: 0
+
+// form items
+=standardInput($height: 2.5rem, $padding: 0 .5rem, $display: block, $width: 100%, $font-size: $input-font-size)
+    height: $height
+    line-height: $height
+    padding: $padding
+    display: $display
+    width: $width
+    font-size: $font-size
+    font-family: $font-family
+=standardTextArea($padding: .5rem .5rem, $display: block, $width: 100%, $font-size: $input-font-size)
+    padding: $padding
+    display: $display
+    width: $width
+    font-size: $font-size
+    font-family: $font-family
+    overflow: auto
+    resize: none
