@@ -21,6 +21,16 @@ const DUMMY_DATA = [
 ]
 
 function AllItems() {
+    fetch(
+        'https://mystash-78e22-default-rtdb.asia-southeast1.firebasedatabase.app/items.json'
+    ).then(response => {
+        // json also return promise, so need to wait
+        return response.json();
+    }).then(data => {
+        // need to wait the promise is fully consumed then show the data
+        // before that we need to return the jsx showing loading condition
+    })
+
     return <div>
         <ItemList data={DUMMY_DATA} />
         <Link to="/new-item">
