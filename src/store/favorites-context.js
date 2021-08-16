@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 // context argument -> initial value
 const FavoritesContext = createContext({
@@ -11,7 +11,39 @@ const FavoritesContext = createContext({
 });
 
 export function FavoritesContextProvider(props) {
+    const [isLoading, setIsLoading] = useState(true)
+    const [loadedItems, setLoadedItems] = useState(context.favorites)
+    
     const [userFavorites, setUserFavorites] = useState([])
+
+    useEffect(() => {
+        setIsLoading(true)
+        fetch(
+            'https://mystash-78e22-default-rtdb.asia-southeast1.firebasedatabase.app/favorites.json'
+        ).then(response => {
+            return response.json();
+        }).then(data => {
+            const items = []
+            for (const key in data) {
+                const item = {
+                    id: key,
+                    ...data[key]
+                }
+                items.push(item)
+            }            
+            setIsLoading(false)
+            setLoadedItems(items)
+            return loadedItems
+        }) 
+    }, [])
+
+    if (isLoading) {
+        return (
+            <section>
+                <p>loading</p>
+            </section>
+        )
+    }
 
     function addFavoriteHandler(favoriteItem) {
         console.log(favoriteItem)
@@ -30,6 +62,7 @@ export function FavoritesContextProvider(props) {
     }
 
     function removeFavoriteHandler(itemId) {
+        // console.log(itemId)
         fetch(
             'https://mystash-78e22-default-rtdb.asia-southeast1.firebasedatabase.app/favorites.json',
             {
