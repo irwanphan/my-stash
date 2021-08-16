@@ -22,7 +22,7 @@ function ItemCard(props) {
     }
 
     return (
-        <Card key={props.key}>
+        <Card key={props.id}>
             <div>
                 <img src={props.image} alt={props.title} />
             </div>

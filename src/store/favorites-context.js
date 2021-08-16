@@ -30,10 +30,18 @@ export function FavoritesContextProvider(props) {
     }
 
     function removeFavoriteHandler(itemId) {
-        setUserFavorites((prevUserFavorites) => {
+        fetch(
+            'https://mystash-78e22-default-rtdb.asia-southeast1.firebasedatabase.app/favorites.json',
+            {
+                method: 'DELETE',
+                body: JSON.stringify(itemId),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }
+        ).then(setUserFavorites((prevUserFavorites) => {
             return prevUserFavorites.filter(item => item.id !== itemId)
-        })
-
+        }))
     }
 
     function itemIsFavoriteHandler(itemId) {
