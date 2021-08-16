@@ -14,10 +14,19 @@ export function FavoritesContextProvider(props) {
     const [userFavorites, setUserFavorites] = useState([])
 
     function addFavoriteHandler(favoriteItem) {
-        // setUserFavorites(userFavorites.concat(favoriteItem))
-        setUserFavorites((prevUserFavorites) => {
+        console.log(favoriteItem)
+        fetch(
+            'https://mystash-78e22-default-rtdb.asia-southeast1.firebasedatabase.app/favorites.json',
+            {
+                method: 'POST',
+                body: JSON.stringify(favoriteItem),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }
+        ).then(setUserFavorites((prevUserFavorites) => {
             return prevUserFavorites.concat(favoriteItem)
-        })
+        }))
     }
 
     function removeFavoriteHandler(itemId) {
