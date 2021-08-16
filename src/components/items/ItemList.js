@@ -3,7 +3,7 @@ import ItemCard from "./ItemCard";
 function ItemList(props) {
     return (
         <div>
-            {props.data.map((item) => (
+            {props.items.map((item) => (
                 <ItemCard 
                     key={item.id} 
                     id={item.id}

@@ -64,13 +64,14 @@ function AllItems() {
         )
     }
 
-    return <div>
-        <ItemList data={loadedItems} />
+    return <section>
+        <h1>all items in stash</h1>
+        <ItemList items={loadedItems} />
 
         <Link to="/new-item">
             <FAB>&#10133;</FAB>
         </Link>
-    </div>
+    </section>
 }
 
 export default AllItems;
