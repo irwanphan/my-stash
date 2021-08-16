@@ -7,7 +7,7 @@ import classes from "./MainNavigation.module.sass";
 function MainNavigation() {
     const favoritesCtx = useContext(FavoritesContext)
     return <header className={classes.header}>
-        <div className="identity">my stash</div>
+        <div className={classes.identity}>my stash</div>
         <nav>
             <ul>
                 <li>
